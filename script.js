@@ -1,77 +1,82 @@
-$(document).ready(function(){
-    $(window).scroll(function(){
-        // sticky navbar on scroll script
-        if(this.scrollY > 20){
-            $('.navbar').addClass("sticky");
-        }else{
-            $('.navbar').removeClass("sticky");
-        }
-        
-        // scroll-up button show/hide script
-        if(this.scrollY > 500){
-            $('.scroll-up-btn').addClass("show");
-        }else{
-            $('.scroll-up-btn').removeClass("show");
-        }
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  /* ── Mobile nav ─────────────────────────── */
+  const navToggle = document.getElementById("nav-toggle");
+  const navMenu   = document.getElementById("nav-menu");
 
-    // slide-up script
-    $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop: 0});
-        // removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
-    });
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    navToggle.classList.toggle("open");
+  });
 
-    $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
-        $('html').css("scrollBehavior", "smooth");
-    });
+  /* Close menu on link click (mobile) */
+  navMenu.querySelectorAll("a").forEach(link =>
+    link.addEventListener("click", () => navMenu.classList.remove("open"))
+  );
 
-    // toggle menu/navbar script
-    $('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
-    });
+  /* ── Dark-mode toggle + persistence ─────── */
+  const themeBtn = document.getElementById("theme-btn");
+  const root     = document.documentElement;
+  const stored   = localStorage.getItem("theme");
+  if (stored) root.dataset.theme = stored;
 
-    // typing text animation script
-    var typed = new Typed(".typing", {
-        strings: ["Student", "Developer", "Designer","programmer"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
+  setThemeIcon();
+  themeBtn.addEventListener("click", () => {
+    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", root.dataset.theme);
+    setThemeIcon();
+    lucide.createIcons();      // refresh icons after html change
+  });
 
-    var typed = new Typed(".typing-2", {
-        strings: ["Student", "Developer", "Designer","programmer"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
+  function setThemeIcon() {
+    themeBtn.innerHTML =
+      root.dataset.theme === "dark"
+        ? '<i data-lucide="sun"></i>'
+        : '<i data-lucide="moon"></i>';
+  }
 
-    // owl carousel script
-    $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplay: true,
-        autoplayTimeOut: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 2,
-                nav: false
-            },
-            1000:{
-                items: 3,
-                nav: false
-            }
-        }
+  /* ── Highlight active nav link on scroll ── */
+  const sections  = document.querySelectorAll("section[id]");
+  const navLinks  = navMenu.querySelectorAll("a[href^='#']");
+
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY + 200;
+    sections.forEach(sec => {
+      if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+        navLinks.forEach(l => l.classList.remove("active"));
+        const active = navMenu.querySelector(`a[href="#${sec.id}"]`);
+        active && active.classList.add("active");
+      }
     });
+  });
+
+  /* ── Initialise AOS & Lucide ────────────── */
+  AOS.init({ duration: 800, once: true });
+  lucide.createIcons();
 });
 
 
 
+const typingTarget = document.getElementById("typing");
+const hiddenName = document.getElementById("hidden-name");
+const text = "Hello, I’m ";
+const name = hiddenName.textContent.trim();
+let index = 0;
+let nameIndex = 0;
 
+function typeEffect() {
+  if (index < text.length) {
+    typingTarget.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 80);
+  } else if (nameIndex < name.length) {
+    typingTarget.innerHTML += name.charAt(nameIndex);
+    nameIndex++;
+    setTimeout(typeEffect, 100);
+  }
+}
+
+window.addEventListener("load", () => {
+  typingTarget.innerHTML = "";
+  hiddenName.style.display = "none";
+  typeEffect();
+});
