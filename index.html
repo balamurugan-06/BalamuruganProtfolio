@@ -3,261 +3,1403 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balamurugan Portfolio</title>
+
+  <title>Balamurugan Loganathan | Data Analyst</title>
+
+  <meta
+    name="description"
+    content="Balamurugan Loganathan - Data Analyst specializing in Python, SQL, Power BI, Tableau, Excel and AI-powered analytics."
+  />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Core CSS & AOS animations -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- AOS Animation -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@next/dist/aos.css"
+  />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
-  <!-- Favicon  -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
+
 <body>
 
-  <!-- ░░ Header / Navbar ░░ -->
-  <header class="header glass">
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+
+  <header class="header">
     <div class="container nav-wrapper">
-      <a href="#home" class="logo">Bala<span class="accent">murugan</span></a>
-      <button id="nav-toggle" class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+
+      <a href="#home" class="logo">
+        Bala<span>murugan</span>
+      </a>
+
+      <button
+        id="nav-toggle"
+        class="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
       <nav id="nav-menu" class="nav-menu">
-        <a href="#home">Home</a>
+
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
-        <button id="theme-btn" class="theme-btn" aria-label="Toggle theme"></button>
+
+        <button
+          id="theme-btn"
+          class="theme-btn"
+          aria-label="Toggle dark mode"
+        >
+          <i data-lucide="moon"></i>
+        </button>
+
       </nav>
+
     </div>
   </header>
 
-  <!-- ░░ Hero ░░ -->
-  <section id="home" class="hero clear-hero" data-aos="fade-up">
-  <div class="hero-grid container">
-    <!-- ── Text Side ── -->
-    <div class="hero-text">
-      
-       <h1 class="hero-greet">
-  <span id="typing" class="typing-text"></span>
-  <span id="hidden-name">Balamurugan Loganathan 👋</span>
-</h1>
+
+  <!-- =========================================================
+       HERO
+  ========================================================== -->
+
+  <main>
+
+    <section id="home" class="hero">
+
+      <div class="container hero-grid">
+
+        <!-- Hero Text -->
+
+        <div class="hero-text" data-aos="fade-right">
+
+          <div class="availability">
+            <span class="status-dot"></span>
+            Data Analyst • AI & BI Analytics
+          </div>
+
+          <h1>
+            Hi, I'm
+            <span class="gradient-text">Balamurugan</span>
+            <span class="wave">👋</span>
+          </h1>
+
+          <h2>
+            Data Analyst
+            <span class="separator">|</span>
+            AI & Business Intelligence
+          </h2>
+
+          <p class="hero-description">
+            I transform raw data into actionable business insights using
+            Python, SQL, Power BI, Tableau, Excel and AI-powered analytics.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+              View Projects
+              <i data-lucide="arrow-right"></i>
+            </a>
+
+            <a href="Balamurugan_Resume.pdf"
+               class="btn btn-outline"
+               target="_blank">
+              View Resume
+              <i data-lucide="file-text"></i>
+            </a>
+
+          </div>
+
+          <div class="hero-socials">
+
+            <a
+              href="https://github.com/balamurugan-06"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i data-lucide="github"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/balamuruganloganathan/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i data-lucide="linkedin"></i>
+            </a>
+
+            <a
+              href="mailto:balamannai2002@gmail.com"
+              aria-label="Email"
+            >
+              <i data-lucide="mail"></i>
+            </a>
+
+          </div>
+
+        </div>
 
 
+        <!-- Hero Illustration -->
 
-      <p class="hero-summary">
-        Aspiring Full-stack Developer & Data Analyst
+        <div class="hero-visual" data-aos="fade-left">
+
+          <div class="visual-card">
+
+            <div class="visual-header">
+
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <span>analytics.py</span>
+
+            </div>
+
+            <div class="code-area">
+
+              <div>
+                <span class="code-purple">import</span>
+                <span class="code-white"> pandas </span>
+                <span class="code-purple">as</span>
+                <span class="code-white"> pd</span>
+              </div>
+
+              <br>
+
+              <div>
+                <span class="code-blue">data</span>
+                <span class="code-white"> = pd.</span>
+                <span class="code-yellow">read_csv</span>
+                <span class="code-white">(</span>
+                <span class="code-green">"business_data.csv"</span>
+                <span class="code-white">)</span>
+              </div>
+
+              <div>
+                <span class="code-blue">insights</span>
+                <span class="code-white"> = data.</span>
+                <span class="code-yellow">groupby</span>
+                <span class="code-white">(</span>
+                <span class="code-green">"category"</span>
+                <span class="code-white">)</span>
+              </div>
+
+              <div>
+                <span class="code-white">.</span>
+                <span class="code-yellow">sum</span>
+                <span class="code-white">()</span>
+              </div>
+
+              <br>
+
+              <div class="code-result">
+                <span class="result-icon">✓</span>
+                Insights generated successfully
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Floating Cards -->
+
+          <div class="floating-card card-python">
+            <i data-lucide="bar-chart-3"></i>
+            <span>Data Analytics</span>
+          </div>
+
+          <div class="floating-card card-sql">
+            <i data-lucide="database"></i>
+            <span>SQL</span>
+          </div>
+
+          <div class="floating-card card-ai">
+            <i data-lucide="sparkles"></i>
+            <span>AI Analytics</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================== -->
+
+    <section id="about" class="section about-section">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-label">ABOUT ME</span>
+
+          <h2>
+            Turning Data Into
+            <span class="gradient-text">Decisions</span>
+          </h2>
+
+          <p>
+            I enjoy solving business problems where data can improve
+            decision-making, automate analysis and uncover hidden patterns.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-content" data-aos="fade-right">
+
+            <p>
+              I'm a Data Analyst with a Master's in Data Analytics from the
+              University of Wollongong and a strong foundation in end-to-end
+              data workflows.
+            </p>
+
+            <p>
+              My work spans data ingestion, cleaning, exploratory analysis,
+              KPI development, statistical analysis, visualization and
+              business reporting.
+            </p>
+
+            <p>
+              I also build AI-powered analytics applications that make
+              data analysis more accessible to non-technical users.
+            </p>
+
+          </div>
+
+
+          <div class="about-stats" data-aos="fade-left">
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-lucide="code-2"></i>
+              </div>
+              <strong>Python</strong>
+              <span>Analytics & ML</span>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-lucide="database"></i>
+              </div>
+              <strong>SQL</strong>
+              <span>Data Analysis</span>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-lucide="pie-chart"></i>
+              </div>
+              <strong>Power BI</strong>
+              <span>Business Intelligence</span>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-lucide="sparkles"></i>
+              </div>
+              <strong>AI</strong>
+              <span>Analytics Applications</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         WHAT I DO
+    ========================================================== -->
+
+    <section class="section services-section">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-label">WHAT I DO</span>
+
+          <h2>
+            From Raw Data to
+            <span class="gradient-text">Business Value</span>
+          </h2>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card" data-aos="fade-up">
+
+            <div class="service-icon">
+              <i data-lucide="bar-chart-3"></i>
+            </div>
+
+            <h3>Data Analysis</h3>
+
+            <p>
+              Clean, explore and analyze datasets to identify patterns,
+              trends and actionable insights.
+            </p>
+
+            <div class="service-tags">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+            </div>
+
+          </article>
+
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="service-icon">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
+
+            <h3>Business Intelligence</h3>
+
+            <p>
+              Build interactive dashboards and KPI frameworks that help
+              stakeholders understand business performance.
+            </p>
+
+            <div class="service-tags">
+              <span>Power BI</span>
+              <span>Tableau</span>
+              <span>Excel</span>
+            </div>
+
+          </article>
+
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="service-icon">
+              <i data-lucide="workflow"></i>
+            </div>
+
+            <h3>ETL & Data Preparation</h3>
+
+            <p>
+              Transform raw data from multiple sources into structured,
+              clean and analysis-ready datasets.
+            </p>
+
+            <div class="service-tags">
+              <span>SQL</span>
+              <span>ETL</span>
+              <span>Power Query</span>
+            </div>
+
+          </article>
+
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="service-icon">
+              <i data-lucide="bot"></i>
+            </div>
+
+            <h3>AI-Powered Analytics</h3>
+
+            <p>
+              Build applications that combine analytics, automation and
+              AI to simplify data-driven decision-making.
+            </p>
+
+            <div class="service-tags">
+              <span>LLMs</span>
+              <span>Flask</span>
+              <span>AI</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FEATURED PROJECT
+    ========================================================== -->
+
+    <section id="projects" class="section projects-section">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-label">FEATURED WORK</span>
+
+          <h2>
+            Projects That
+            <span class="gradient-text">Solve Problems</span>
+          </h2>
+
+          <p>
+            A selection of analytics, AI and software projects built to
+            solve practical problems.
+          </p>
+
+        </div>
+
+
+        <!-- Featured Project -->
+
+        <article class="featured-project" data-aos="fade-up">
+
+          <div class="featured-image">
+
+            <div class="project-preview analytics-preview">
+
+              <div class="preview-top">
+                <span>AI SQL Data Analyst</span>
+                <span class="preview-status">● Live</span>
+              </div>
+
+              <div class="preview-content">
+
+                <div class="query-box">
+                  <span>Ask:</span>
+                  "What were our top performing categories?"
+                </div>
+
+                <div class="chart-placeholder">
+
+                  <div class="bar bar-1"></div>
+                  <div class="bar bar-2"></div>
+                  <div class="bar bar-3"></div>
+                  <div class="bar bar-4"></div>
+                  <div class="bar bar-5"></div>
+
+                </div>
+
+                <div class="preview-result">
+                  ✓ SQL generated &nbsp; ✓ Analysis completed
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="featured-content">
+
+            <span class="project-number">01 — FEATURED PROJECT</span>
+
+            <h3>AI SQL Data Analyst Assistant</h3>
+
+            <p>
+              A web application that converts natural language questions
+              into SQL queries for self-service data analysis, reducing
+              the need for users to manually write SQL.
+            </p>
+
+            <p>
+              The application supports Excel and CSV uploads using Pandas,
+              enabling dynamic SQL-based analysis and ad-hoc reporting.
+            </p>
+
+            <div class="tech-stack">
+
+              <span>Python</span>
+              <span>Flask</span>
+              <span>Pandas</span>
+              <span>SQL</span>
+              <span>JavaScript</span>
+              <span>Render</span>
+
+            </div>
+
+            <div class="project-buttons">
+
+              <a
+                href="#"
+                class="project-link disabled-link"
+                title="Add your live demo URL"
+              >
+                <i data-lucide="external-link"></i>
+                Live Demo
+              </a>
+
+              <a
+                href="https://github.com/balamurugan-06"
+                target="_blank"
+                class="project-link"
+              >
+                <i data-lucide="github"></i>
+                GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Project Grid -->
+
+        <div class="project-grid">
+
+
+          <!-- iPaper -->
+
+          <article class="project-card" data-aos="fade-up">
+
+            <div class="project-image ipaper-image">
+
+              <div class="mini-interface">
+
+                <div class="mini-sidebar"></div>
+
+                <div class="mini-main">
+
+                  <div class="mini-line large"></div>
+                  <div class="mini-line"></div>
+
+                  <div class="mini-boxes">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="mini-document"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="card-content">
+
+              <span class="project-category">
+                AI • Document Management
+              </span>
+
+              <h3>iPaper — AI-Powered Document Management</h3>
+
+              <p>
+                Secure document management platform with role-based
+                access control, PDF management, AI summarization and
+                topic clustering.
+              </p>
+
+              <div class="tech-stack small">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>PostgreSQL</span>
+                <span>OpenAI API</span>
+              </div>
+
+              <a
+                href="https://github.com/balamurugan-06"
+                target="_blank"
+                class="text-link"
+              >
+                View Project
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Tableau -->
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="project-image tableau-image">
+
+              <div class="dashboard-preview">
+
+                <div class="dash-header">
+                  <span>Singapore Analytics</span>
+                </div>
+
+                <div class="dash-content">
+
+                  <div class="dash-chart">
+
+                    <div class="dash-bars">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+
+                  </div>
+
+                  <div class="dash-side">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="card-content">
+
+              <span class="project-category">
+                BI • Tableau
+              </span>
+
+              <h3>Singapore Data Visualization Portfolio</h3>
+
+              <p>
+                Interactive Tableau dashboards analyzing HDB resale
+                prices and Singapore MRT and bus ridership patterns.
+              </p>
+
+              <div class="tech-stack small">
+                <span>Tableau</span>
+                <span>Excel</span>
+                <span>LOD</span>
+                <span>Calculated Fields</span>
+              </div>
+
+              <a
+                href="https://public.tableau.com/app/profile/balamurugan.loganathan"
+                target="_blank"
+                class="text-link"
+              >
+                View Dashboards
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Room Booking -->
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="project-image booking-image">
+
+              <div class="booking-preview">
+
+                <div class="booking-header"></div>
+
+                <div class="booking-grid">
+
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="booked"></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="booked"></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="card-content">
+
+              <span class="project-category">
+                Full Stack • Java
+              </span>
+
+              <h3>Room Booking Application</h3>
+
+              <p>
+                Full-stack room booking system with real-time
+                availability tracking, conflict detection and an
+                administrative dashboard.
+              </p>
+
+              <div class="tech-stack small">
+                <span>Java</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+              </div>
+
+              <a
+                href="https://github.com/balamurugan-06"
+                target="_blank"
+                class="text-link"
+              >
+                View Project
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Enterprise Analytics -->
+
+          <article class="project-card project-highlight" data-aos="fade-up">
+
+            <div class="project-image retail-image">
+
+              <div class="retail-preview">
+
+                <div class="retail-top">
+                  <span>Retail Analytics</span>
+                  <span>KPIs</span>
+                </div>
+
+                <div class="retail-metrics">
+
+                  <div>
+                    <small>Revenue</small>
+                    <strong>₹24.8M</strong>
+                  </div>
+
+                  <div>
+                    <small>Orders</small>
+                    <strong>18.4K</strong>
+                  </div>
+
+                  <div>
+                    <small>Growth</small>
+                    <strong>+14.2%</strong>
+                  </div>
+
+                </div>
+
+                <div class="retail-chart">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="card-content">
+
+              <span class="project-category">
+                Analytics • ETL • BI
+              </span>
+
+              <h3>Enterprise Retail Analytics Platform</h3>
+
+              <p>
+                Analytics platform concept focused on standardizing
+                multi-source business data, KPI definitions and
+                reporting workflows for consistent decision-making.
+              </p>
+
+              <div class="tech-stack small">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>ETL</span>
+                <span>Power BI</span>
+              </div>
+
+              <a
+                href="https://github.com/balamurugan-06/enterprise-retail-analytics-platform"
+                target="_blank"
+                class="text-link"
+              >
+                View Project
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SKILLS
+    ========================================================== -->
+
+    <section id="skills" class="section skills-section">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-label">TECHNICAL SKILLS</span>
+
+          <h2>
+            My Analytics
+            <span class="gradient-text">Toolkit</span>
+          </h2>
+
+        </div>
+
+
+        <div class="skills-layout">
+
+
+          <!-- Data Analytics -->
+
+          <div class="skill-group" data-aos="fade-up">
+
+            <div class="skill-group-header">
+
+              <div class="skill-group-icon">
+                <i data-lucide="bar-chart-3"></i>
+              </div>
+
+              <div>
+                <h3>Data Analytics</h3>
+                <p>Analysis & statistical techniques</p>
+              </div>
+
+            </div>
+
+            <div class="skill-list">
+
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Matplotlib</span>
+              <span>Seaborn</span>
+              <span>SQL</span>
+              <span>EDA</span>
+              <span>Data Cleaning</span>
+              <span>Statistical Analysis</span>
+              <span>A/B Testing</span>
+              <span>Regression Analysis</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- BI -->
+
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="skill-group-header">
+
+              <div class="skill-group-icon">
+                <i data-lucide="layout-dashboard"></i>
+              </div>
+
+              <div>
+                <h3>BI & Visualization</h3>
+                <p>Dashboards & business reporting</p>
+              </div>
+
+            </div>
+
+            <div class="skill-list">
+
+              <span>Power BI</span>
+              <span>DAX</span>
+              <span>Power Query</span>
+              <span>Data Modeling</span>
+              <span>Tableau</span>
+              <span>Calculated Fields</span>
+              <span>LOD Expressions</span>
+              <span>Excel</span>
+              <span>PivotTables</span>
+              <span>Advanced Charts</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- ML / AI -->
+
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="skill-group-header">
+
+              <div class="skill-group-icon">
+                <i data-lucide="brain-circuit"></i>
+              </div>
+
+              <div>
+                <h3>Machine Learning & AI</h3>
+                <p>Predictive & intelligent analytics</p>
+              </div>
+
+            </div>
+
+            <div class="skill-list">
+
+              <span>Scikit-learn</span>
+              <span>Classification</span>
+              <span>Regression</span>
+              <span>Clustering</span>
+              <span>Segmentation</span>
+              <span>LLM Applications</span>
+              <span>AI Analytics</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Data / Cloud -->
+
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="skill-group-header">
+
+              <div class="skill-group-icon">
+                <i data-lucide="cloud"></i>
+              </div>
+
+              <div>
+                <h3>Data, Cloud & Tools</h3>
+                <p>Engineering & development environment</p>
+              </div>
+
+            </div>
+
+            <div class="skill-list">
+
+              <span>PostgreSQL</span>
+              <span>MySQL</span>
+              <span>AWS EC2</span>
+              <span>AWS S3</span>
+              <span>ETL Pipelines</span>
+              <span>Flask</span>
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Linux</span>
+              <span>Jupyter</span>
+              <span>VS Code</span>
+              <span>Render</span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         EDUCATION
+    ========================================================== -->
+
+    <section id="education" class="section education-section">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-label">EDUCATION</span>
+
+          <h2>
+            Academic
+            <span class="gradient-text">Journey</span>
+          </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <!-- Master's -->
+
+          <article class="timeline-item" data-aos="fade-right">
+
+            <div class="timeline-marker">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+
+            <div class="education-card">
+
+              <div class="education-top">
+
+                <div>
+
+                  <span class="education-date">
+                    JAN 2025 — MAR 2026
+                  </span>
+
+                  <h3>
+                    Master of Computing — Data Analytics
+                  </h3>
+
+                  <h4>
+                    University of Wollongong (SIM GE), Singapore
+                  </h4>
+
+                </div>
+
+                <div class="education-score">
+                  72%
+                </div>
+
+              </div>
+
+              <p>
+                Focused on data analytics, data mining, Python for
+                machine learning and business intelligence visualization.
+              </p>
+
+              <div class="education-tags">
+                <span>Data Analytics</span>
+                <span>Machine Learning</span>
+                <span>BI Visualization</span>
+              </div>
+
+              <a
+                href="https://www.uow.edu.au/"
+                target="_blank"
+                class="text-link"
+              >
+                University Website
+                <i data-lucide="external-link"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Bachelor's -->
+
+          <article class="timeline-item" data-aos="fade-left">
+
+            <div class="timeline-marker">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+
+            <div class="education-card">
+
+              <div class="education-top">
+
+                <div>
+
+                  <span class="education-date">
+                    AUG 2019 — MAY 2023
+                  </span>
+
+                  <h3>
+                    Bachelor of Technology — Information Technology
+                  </h3>
+
+                  <h4>
+                    Karpagam College of Engineering, Coimbatore
+                  </h4>
+
+                </div>
+
+                <div class="education-score">
+                  8.65 CGPA
+                </div>
+
+              </div>
+
+              <p>
+                Built a strong foundation in databases, programming,
+                operating systems, software development and cloud technologies.
+              </p>
+
+              <div class="education-tags">
+                <span>IT</span>
+                <span>DBMS</span>
+                <span>Programming</span>
+                <span>Cloud</span>
+              </div>
+
+              <a
+                href="https://kce.ac.in/"
+                target="_blank"
+                class="text-link"
+              >
+                College Website
+                <i data-lucide="external-link"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         RESUME
+    ========================================================== -->
+
+    <section id="resume" class="section resume-section">
+
+      <div class="container">
+
+        <div class="resume-card" data-aos="zoom-in">
+
+          <div class="resume-icon">
+            <i data-lucide="file-text"></i>
+          </div>
+
+          <div class="resume-content">
+
+            <span class="section-label">
+              MY RESUME
+            </span>
+
+            <h2>
+              Interested in my
+              <span class="gradient-text">experience?</span>
+            </h2>
+
+            <p>
+              Explore my latest resume for a detailed overview of my
+              technical skills, projects, education and analytics experience.
+            </p>
+
+          </div>
+
+          <a
+            href="Balamurugan_Resume.pdf"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            View Resume
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+
+    <section id="contact" class="section contact-section">
+
+      <div class="container">
+
+        <div class="contact-card" data-aos="fade-up">
+
+          <div class="contact-content">
+
+            <span class="section-label">
+              GET IN TOUCH
+            </span>
+
+            <h2>
+              Let's Connect
+              <span class="wave">🤝</span>
+            </h2>
+
+            <p>
+              Interested in data analytics, business intelligence or
+              AI-powered analytics? Let's connect and talk about
+              data-driven problems and opportunities.
+            </p>
+
+          </div>
+
+
+          <div class="contact-links">
+
+            <a
+              href="mailto:balamannai2002@gmail.com"
+              class="contact-link"
+            >
+              <span class="contact-icon">
+                <i data-lucide="mail"></i>
+              </span>
+
+              <div>
+                <small>Email</small>
+                <strong>balamannai2002@gmail.com</strong>
+              </div>
+
+            </a>
+
+
+            <a
+              href="https://www.linkedin.com/in/balamuruganloganathan/"
+              target="_blank"
+              class="contact-link"
+            >
+              <span class="contact-icon">
+                <i data-lucide="linkedin"></i>
+              </span>
+
+              <div>
+                <small>LinkedIn</small>
+                <strong>linkedin.com/in/bala06</strong>
+              </div>
+
+            </a>
+
+
+            <a
+              href="https://github.com/balamurugan-06"
+              target="_blank"
+              class="contact-link"
+            >
+              <span class="contact-icon">
+                <i data-lucide="github"></i>
+              </span>
+
+              <div>
+                <small>GitHub</small>
+                <strong>github.com/balamurugan-06</strong>
+              </div>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        Bala<span>murugan</span>
+      </div>
+
+      <p>
+        Data Analyst • AI & Business Intelligence
       </p>
 
-      <!-- Social icons row -->
-      <div class="hero-socials">
-        <a href="https://github.com/balamurugan-06" aria-label="GitHub"><i data-lucide="github"></i></a>
-        <a href="https://linkedin.com/in/bala06" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-        <a href="mailto:balamannai2002@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+      <div class="footer-socials">
+
+        <a
+          href="https://github.com/balamurugan-06"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <i data-lucide="github"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/balamuruganloganathan/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
+
+        <a
+          href="mailto:balamannai2002@gmail.com"
+          aria-label="Email"
+        >
+          <i data-lucide="mail"></i>
+        </a>
+
       </div>
 
-      <!-- CTA buttons -->
-      <div class="hero-cta">
-        <a href="#contact" class="btn primary">Contact&nbsp;Me</a>
-        <a href="#resume"  class="btn secondary">See my resume</a>
-      </div>
+      <div class="footer-line"></div>
+
+      <p class="copyright">
+        © 2026 Balamurugan Loganathan. All rights reserved.
+      </p>
+
     </div>
 
-    <!-- ── Illustration Side ── -->
-    <div class="hero-illu">
-      <img src="Portfolio.png" alt="Developer at desk illustration" />
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- ░░ Projects ░░ -->
-  <section id="projects" class="section" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="project-grid">
-        <article class="project-card glass">
-          <img src="electricity.png" alt="Electricity Billing Calculator" />
-          <div class="card-content">
-            <h3>Electricity Billing Calculator</h3>
-            <p>Displaying the Calculation of Electricity billing Amount Language used : Java Database used : Mysql</p>
-            
-          </div>
-        </article>
-        <article class="project-card glass">
-          <img src="Flat Dashboard.PNG" alt="HDB Flat Price Analysis Dashboard" />
-          <div class="card-content">
-            <h3>HDB Flat Price Analysis Dashboard</h3>
-            <p>Interactive Tableau dashboard analyzing resale flat prices across Singapore towns. Includes price trends over time, breakdowns by flat type, and filters by year, town, and storey range to uncover housing affordability patterns.</p>
-            <a class="link" href="https://public.tableau.com/app/profile/balamurugan.loganathan/viz/HousingPriceanalysis_17511672972900/HDBFlatReview" target="_blank"><strong style="color:#d58efc;">Link ↗</strong> </a>
-          </div>
-        </article>
-        
-        <article class="project-card glass">
-          <img src="SG Transport.PNG" alt="SG Public Transport Dashboard" />
-          <div class="card-content">
-            <h3>SG Public Transport Dashboard</h3>
-            <p>A data-driven dashboard visualizing MRT and bus ridership patterns across Singapore. Includes line-specific trends, passenger volume breakdowns, and interactivity via filters like year, mode, and station.</p>
-            <a class="link" href="https://public.tableau.com/app/profile/balamurugan.loganathan/viz/sg-public-transport-dashboard/Dashboard?publish=yes" target="_blank"><strong style="color:#d58efc;">Link ↗</strong> </a>
-          </div>
-        </article>
-        
-        <article class="project-card glass">
-          <img src="Figma.PNG" alt="EV Car website" />
-          <div class="card-content">
-            <h3>EV Car website</h3>
-            <p>A modern and responsive EV car landing page designed in Figma. Focuses on sleek user interface, electric vehicle features, and clean UX structure</p>
-            <a class="link" href="https://www.figma.com/proto/FxXyUGFwzIq4wk4fQ3Mdpu/EV-Car-Website?node-id=17-65&starting-point-node-id=2%3A3&scaling=scale-down&content-scaling=fixed" target="_blank"><strong style="color:#d58efc;">Link ↗</strong> </a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ Skills ░░ -->
-  <section id="skills" class="section" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section-title">Skills</h2>
-    <div class="skill-grid">
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-        <p>Python</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
-        <p>SQL</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-        <p>Java</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-        <p>HTML</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-        <p>CSS</p>
-      </div>
-
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-        <p>JavaScript</p> 
-      </div>
-
-      <div class="skill-card"> 
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" /> 
-        <p>Vue.js</p>
-      </div>
-      
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tableau.svg" alt="Tableau" />
-        <p>Tableau</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/powerbi.svg" alt="Power BI" />
-        <p>Power BI</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="LINUX" />
-        <p>LINUX</p>
-      </div>
-      
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
-        <p>Figma</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS" style="filter: invert(1);" />
-        <p>AWS</p>
-      </div>
-      <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
-        <p>GitHub</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- ░░ Education ░░ -->
-<section id="education" class="section">
-  <h2 class="section-title">Education</h2>
-
-  <div class="edu-wrapper">
-    <!-- University of Wollongong -->
-    <div class="edu-container">
-      <img src="UOW.png" alt="UOW Logo" class="edu-logo-circle" />
-
-      <div class="edu-card">
-        <div class="edu-header">
-          <h3>University of Wollongong (SIM GE)</h3>
-          <span>2025 – 2026</span>
-        </div>
-        <h4 class="edu-subtitle">Master of Computing (Data Analytics)</h4>
-        <ul>
-          <li>⚡ Gained hands-on experience in Data Mining, Python for ML, and BI Visualization.</li>
-          <li>⚡ Collaborated on a project to build a transport optimization model for Singapore's MRT system.</li>
-        </ul>
-        <a href="https://www.uow.edu.au/" class="edu-link" target="_blank">Visit Website</a>
-      </div>
-    </div>
-
-    <!-- Karpagam College -->
-    <div class="edu-container">
-      <img src="Karpagam.png" alt="Karpagam Logo" class="edu-logo-circle" />
-
-      <div class="edu-card">
-        <div class="edu-header">
-          <h3>Karpagam College of Engineering</h3>
-          <span>2019 – 2023</span>
-        </div>
-        <h4 class="edu-subtitle">B.Tech in Information Technology</h4>
-        <ul>
-          <li>⚡ Strong foundation in DBMS, Java, OS, and Cloud Technologies.</li>
-          <li>⚡ Developed a Hospital Management System as a final year project.</li>
-        </ul>
-        <a href="https://kce.ac.in/" class="edu-link" target="_blank">Visit Website</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- ░░ Resume ░░ -->
-  <section id="resume" class="section" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title">Résumé</h2>
-      <a href="Balamurugan Resume.pdf" class="btn secondary" target="_blank">Download PDF</a>
-    </div>
-  </section>
-
-  <!-- ░░ Footer / Contact ░░ -->
-  <footer id="contact" class="footer glass" data-aos="fade-up">
-    <div class="container footer-inner">
-      <p>Connect with me</p>
-      <div class="social-icons">
-        <a href="https://github.com/balamurugan-06" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
-        <a href="https://linkedin.com/in/bala06" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-        <a href="mailto:balamannai2002@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
-      </div>
-      <p class="copyright">© 2025 Balamurugan</p>
-    </div>
   </footer>
 
-  <!-- JS Libraries -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- =========================================================
+       AOS
+  ========================================================== -->
+
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  <!-- JS -->
   <script src="script.js"></script>
 
 </body>
 </html>
-
-
