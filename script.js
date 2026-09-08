@@ -1,82 +1,331 @@
+/* =========================================================
+   PORTFOLIO V2 JAVASCRIPT
+========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
-  /* ── Mobile nav ─────────────────────────── */
+
+  /* =======================================================
+     ELEMENTS
+  ======================================================== */
+
   const navToggle = document.getElementById("nav-toggle");
-  const navMenu   = document.getElementById("nav-menu");
+  const navMenu = document.getElementById("nav-menu");
 
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-    navToggle.classList.toggle("open");
-  });
-
-  /* Close menu on link click (mobile) */
-  navMenu.querySelectorAll("a").forEach(link =>
-    link.addEventListener("click", () => navMenu.classList.remove("open"))
-  );
-
-  /* ── Dark-mode toggle + persistence ─────── */
   const themeBtn = document.getElementById("theme-btn");
-  const root     = document.documentElement;
-  const stored   = localStorage.getItem("theme");
-  if (stored) root.dataset.theme = stored;
 
-  setThemeIcon();
-  themeBtn.addEventListener("click", () => {
-    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", root.dataset.theme);
-    setThemeIcon();
-    lucide.createIcons();      // refresh icons after html change
-  });
+  const root = document.documentElement;
 
-  function setThemeIcon() {
+  const sections = document.querySelectorAll("section[id]");
+
+  const navLinks =
+    document.querySelectorAll(
+      '.nav-menu a[href^="#"]'
+    );
+
+
+  /* =======================================================
+     MOBILE NAVIGATION
+  ======================================================== */
+
+  if (navToggle && navMenu) {
+
+    navToggle.addEventListener("click", () => {
+
+      const isOpen =
+        navMenu.classList.toggle("open");
+
+      navToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      navToggle.classList.toggle(
+        "open",
+        isOpen
+      );
+
+    });
+
+
+    navLinks.forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navMenu.classList.remove("open");
+
+        navToggle.classList.remove("open");
+
+        navToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+    });
+
+  }
+
+
+  /* =======================================================
+     DARK MODE
+  ======================================================== */
+
+  const savedTheme =
+    localStorage.getItem("theme");
+
+
+  if (savedTheme) {
+
+    root.dataset.theme =
+      savedTheme;
+
+  }
+  else {
+
+    const prefersDark =
+      window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+    if (prefersDark) {
+
+      root.dataset.theme = "dark";
+
+    }
+
+  }
+
+
+  updateThemeIcon();
+
+
+  if (themeBtn) {
+
+    themeBtn.addEventListener(
+      "click",
+      () => {
+
+        const currentTheme =
+          root.dataset.theme;
+
+        const newTheme =
+          currentTheme === "dark"
+            ? "light"
+            : "dark";
+
+        root.dataset.theme =
+          newTheme;
+
+        localStorage.setItem(
+          "theme",
+          newTheme
+        );
+
+        updateThemeIcon();
+
+        if (
+          typeof lucide !== "undefined"
+        ) {
+
+          lucide.createIcons();
+
+        }
+
+      }
+    );
+
+  }
+
+
+  function updateThemeIcon() {
+
+    if (!themeBtn) return;
+
+    const isDark =
+      root.dataset.theme === "dark";
+
     themeBtn.innerHTML =
-      root.dataset.theme === "dark"
+      isDark
         ? '<i data-lucide="sun"></i>'
         : '<i data-lucide="moon"></i>';
+
   }
 
-  /* ── Highlight active nav link on scroll ── */
-  const sections  = document.querySelectorAll("section[id]");
-  const navLinks  = navMenu.querySelectorAll("a[href^='#']");
 
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY + 200;
-    sections.forEach(sec => {
-      if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
-        navLinks.forEach(l => l.classList.remove("active"));
-        const active = navMenu.querySelector(`a[href="#${sec.id}"]`);
-        active && active.classList.add("active");
+  /* =======================================================
+     ACTIVE NAV LINK
+  ======================================================== */
+
+  function updateActiveNav() {
+
+    const scrollPosition =
+      window.scrollY + 180;
+
+    let currentSection = "";
+
+    sections.forEach(section => {
+
+      const sectionTop =
+        section.offsetTop;
+
+      const sectionHeight =
+        section.offsetHeight;
+
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition <
+          sectionTop + sectionHeight
+      ) {
+
+        currentSection =
+          section.getAttribute("id");
+
       }
+
     });
+
+
+    navLinks.forEach(link => {
+
+      link.classList.remove("active");
+
+      const href =
+        link.getAttribute("href");
+
+      if (
+        href === `#${currentSection}`
+      ) {
+
+        link.classList.add("active");
+
+      }
+
+    });
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateActiveNav
+  );
+
+  updateActiveNav();
+
+
+  /* =======================================================
+     AOS ANIMATION
+  ======================================================== */
+
+  if (typeof AOS !== "undefined") {
+
+    AOS.init({
+
+      duration: 750,
+
+      easing: "ease-out-cubic",
+
+      once: true,
+
+      offset: 80
+
+    });
+
+  }
+
+
+  /* =======================================================
+     LUCIDE ICONS
+  ======================================================== */
+
+  if (typeof lucide !== "undefined") {
+
+    lucide.createIcons();
+
+  }
+
+
+  /* =======================================================
+     HERO CODE CARD FLOATING EFFECT
+  ======================================================== */
+
+  const visualCard =
+    document.querySelector(
+      ".visual-card"
+    );
+
+  if (visualCard) {
+
+    document.addEventListener(
+      "mousemove",
+      event => {
+
+        const rect =
+          visualCard.getBoundingClientRect();
+
+        const centerX =
+          rect.left + rect.width / 2;
+
+        const centerY =
+          rect.top + rect.height / 2;
+
+        const distanceX =
+          (event.clientX - centerX) / 80;
+
+        const distanceY =
+          (event.clientY - centerY) / 80;
+
+        visualCard.style.transform =
+          `
+          perspective(1000px)
+          rotateY(${-4 + distanceX}deg)
+          rotateX(${2 - distanceY}deg)
+          `;
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     DISABLE FAKE LIVE DEMO LINKS
+  ======================================================== */
+
+  const disabledLinks =
+    document.querySelectorAll(
+      ".disabled-link"
+    );
+
+  disabledLinks.forEach(link => {
+
+    link.addEventListener(
+      "click",
+      event => {
+
+        event.preventDefault();
+
+      }
+    );
+
   });
 
-  /* ── Initialise AOS & Lucide ────────────── */
-  AOS.init({ duration: 800, once: true });
-  lucide.createIcons();
-});
 
+  /* =======================================================
+     CURRENT YEAR
+  ======================================================== */
 
+  const yearElement =
+    document.querySelector(
+      ".copyright"
+    );
 
-const typingTarget = document.getElementById("typing");
-const hiddenName = document.getElementById("hidden-name");
-const text = "Hello, I’m ";
-const name = hiddenName.textContent.trim();
-let index = 0;
-let nameIndex = 0;
+  if (yearElement) {
 
-function typeEffect() {
-  if (index < text.length) {
-    typingTarget.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, 80);
-  } else if (nameIndex < name.length) {
-    typingTarget.innerHTML += name.charAt(nameIndex);
-    nameIndex++;
-    setTimeout(typeEffect, 100);
+    yearElement.textContent =
+      `© ${new Date().getFullYear()} Balamurugan Loganathan. All rights reserved.`;
+
   }
-}
 
-window.addEventListener("load", () => {
-  typingTarget.innerHTML = "";
-  hiddenName.style.display = "none";
-  typeEffect();
 });
