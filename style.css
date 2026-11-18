@@ -532,7 +532,7 @@ body.ready .hero-title .line:nth-child(2) .word { transition-delay: .12s; }
   .contact-form .row { grid-template-columns: 1fr; }
   .flip { height: 370px; }
   .float-card { display: none; }
-  .hero-title { font-size: 15vw; }
+  .hero-title { font-size: 13vw; }
   .cursor-glow { display: none; }
 }
 
